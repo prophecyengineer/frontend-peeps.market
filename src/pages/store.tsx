@@ -16,7 +16,7 @@ const Store: NextPageWithLayout = () => {
         <RefinementList refinementList={params} setRefinementList={setParams} />
         <InfiniteProducts params={params} type={"original"} />
       </div>
-      <h1>Peep's Merch</h1>
+      <h1>Peep Merch</h1>
       <div className="flex flex-col small:flex-row small:items-start py-6">
  
         <RefinementList refinementList={params} setRefinementList={setParams} />

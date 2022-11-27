@@ -1,3 +1,4 @@
+ // @ts-nocheck
 import useEnrichedLineItems from "@lib/hooks/use-enrich-line-items"
 import DiscountCode from "@modules/checkout/components/discount-code"
 import SkeletonCartPage from "@modules/skeletons/templates/skeleton-cart-page"
@@ -19,7 +20,7 @@ const CartTemplate = () => {
   console.log('items', items)
   const newCarts = {}
 
-  items.map(item => {
+  items && items.map(item => {
     const seller = item.variant.product?.tags?.filter(tag => tag?.value?.includes("original_"))[0]?.value?.replace("original_", '') || "**not assigned to seller product**"
     newCarts[seller] = {
       ...cart,

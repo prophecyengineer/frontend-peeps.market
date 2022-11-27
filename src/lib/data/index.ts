@@ -153,13 +153,14 @@ type FetchProductListParams = {
   pageParam?: number
   queryParams: StoreGetProductsParams
   type?: string 
-  rest?: {user?: string }
+  user?: string 
 }
 
 export const fetchProductsList = async ({
   pageParam = 0,
   queryParams,
   type = 'featured',
+  user = '',
   ...rest
 
 }: FetchProductListParams) => {
@@ -173,7 +174,7 @@ export const fetchProductsList = async ({
       .map(e => e.id)
   }
 
-  const tagsList = tags(rest.user)
+  const tagsList = tags(user)
 
   const { products, count, offset } = await medusaClient.products.list({
     limit: 12,
@@ -185,7 +186,7 @@ export const fetchProductsList = async ({
   // ["ptag_01GJ8SPYTH2PCRHR937JQF4CP5"]
 
 
-  console.log("products fetchProductsList", {products, rest, 'tags(rest?.user)':tags(rest?.user), type})
+  console.log("products fetchProductsList", {products, rest, 'tags(rest?.user)':tags(user), type})
 
   return {
     response: { products, count },

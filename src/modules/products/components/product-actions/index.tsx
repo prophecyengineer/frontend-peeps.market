@@ -19,7 +19,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   
 
 
-  const backLink = (product) => {
+  const backLink = (product: Product) => {
 
     return product?.tags.filter(tag => tag.value.includes('original_')).filter(e => e.value)[0]?.value?.replace('original_', "")
   }
