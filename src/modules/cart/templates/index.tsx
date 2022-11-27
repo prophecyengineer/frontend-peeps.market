@@ -20,7 +20,7 @@ const CartTemplate = () => {
   const newCarts = {}
 
   items.map(item => {
-    const seller = item.variant.product?.tags?.filter(tag => tag.value.includes("original_"))[0].value.replace("original_", '')
+    const seller = item.variant.product?.tags?.filter(tag => tag?.value?.includes("original_"))[0]?.value?.replace("original_", '') || "**not assigned to seller product**"
     newCarts[seller] = {
       ...cart,
       items: !newCarts[seller]?.items ? [item] : [...newCarts[seller]?.items, item],
