@@ -69,6 +69,7 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
 
   if (isSuccess) {
     return (
+      // @ts-ignore
       <div data-theme={query?.ref ? styleMap[query.ref]: 'light'}>
         <Head
           description={data.description}
