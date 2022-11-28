@@ -38,3 +38,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 node_modules
+
+# Local Netlify folder
+.netlify
