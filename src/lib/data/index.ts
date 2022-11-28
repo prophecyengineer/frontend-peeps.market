@@ -30,10 +30,10 @@ const pathLookUpTable = [
       "value": "featured_beast"
   },
   {
-      "id": "ptag_01GJBEF6WC8MDE7WMFQBBERKAY",
-      "created_at": "2022-11-20T21:17:51.000Z",
-      "updated_at": "2022-11-20T21:17:51.000Z",
-      "value": "original_beast"
+    "id": "ptag_01GJXVQKD21ZVYWE5770KFE5G8",
+    "created_at": "2022-11-28T00:55:58.072Z",
+    "updated_at": "2022-11-28T00:55:58.072Z",
+    "value": "original_beast"
   },
   {
       "id": "ptag_01GJ8SPYTH2PCRHR937JQF4CP5",
