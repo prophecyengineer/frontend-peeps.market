@@ -29,9 +29,9 @@ const fetchProduct = async (handle: string) => {
     .then(({ products }) => products[0])
 }
 
-const backLink = (product: Product) => {
-  return product?.tags.filter(tag => tag.value.includes('original_')).filter(e => e.value)[0]?.value?.replace('original_', "")
-}
+// const backLink = (product: Product) => {
+//   return product?.tags.filter(tag => tag.value.includes('original_')).filter(e => e.value)[0]?.value?.replace('original_', "")
+// }
 
 const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
   const { query, isFallback, replace } = useRouter()
