@@ -61,7 +61,7 @@ const InfiniteProducts = ({ params, type }: InfiniteProductsType) => {
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8 flex-1">
         {previews.map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} />
+            <ProductPreview {...p} handle={p.handle + `?ref=${asPath.replace("/", '')}`} />
           </li>
         ))}
         {isLoading &&

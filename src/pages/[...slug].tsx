@@ -17,7 +17,7 @@ const Store: NextPageWithLayout = () => {
     <>
       <Head title={slug.join('/')} description="Explore all of our products." />
     
-      <h1 className='capitalize m-auto'>{ slug.join('/')} Merch</h1>
+      <h1 className='capitalize m-auto creator-title'>{ slug.join('/')} Merch</h1>
       <div className="flex flex-col small:flex-row small:items-start py-6">
         <RefinementList refinementList={params} setRefinementList={setParams} />
         <InfiniteProducts params={params}  type="origin" />

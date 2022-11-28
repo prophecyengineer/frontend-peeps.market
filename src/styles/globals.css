@@ -110,3 +110,15 @@
     @apply text-[36px] leading-[48px] font-semibold;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+
+.creator-title{
+  font-size: 4rem;
+  padding: 0.5em;
+}
+
+.peeps-logo{
+  font-family: 'Bowlby One', cursive;
+
+}

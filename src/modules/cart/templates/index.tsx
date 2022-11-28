@@ -64,7 +64,7 @@ const CartTemplate = () => {
                 {/* {!customer && <SignInPrompt />} */}
                 <ItemsTemplate region={newCarts[key]?.region} items={newCarts[key].items} />
               </div>
-              <div className="relative">
+                <div  className="relative">
                 <div className="flex flex-col gap-y-8 sticky top-12">
                   {newCarts[key] && cart.region && (
                     <>

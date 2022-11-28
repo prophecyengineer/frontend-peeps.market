@@ -46,11 +46,16 @@ const Nav = () => {
       })}
     >
       <header
+        style={{
+          background: "none",
+          position: "absolute",
+          width: "100%"
+        }}
         className={clsx(
-          "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent duration-200 group-hover:bg-white group-hover:border-gray-200",
-          {
-            "!bg-white !border-gray-200": !isHome || isScrolled,
-          }
+          "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent"
+          // {
+            // "!bg-white !border-gray-200": !isHome || isScrolled,
+          // }
         )}
       >
         <nav
@@ -61,28 +66,30 @@ const Nav = () => {
             }
           )}
         >
-          <div className="flex-1 basis-0 h-full flex items-center">
+          {/* <div className="flex-1 basis-0 h-full flex items-center">
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
             </div>
             <div className="hidden small:block h-full">
               <DropdownMenu />
             </div>
-          </div>
+          </div> */}
 
-          <div className="flex items-center h-full">
+          <div style={{
+                filter: "contrast(0)"
+          }} className="flex items-center h-full">
             <Link href="/">
-              <a className="text-xl-semi uppercase">peeps.market</a>
+              <a className="text-xl-semi uppercase peeps-logo">peeps.market</a>
             </Link>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+            {/* <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
               <Link href="/account">
                 <a>Account</a>
               </Link>
-            </div>
+            </div> */}
             <CartDropdown />
           </div>
         </nav>

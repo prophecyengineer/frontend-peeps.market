@@ -52,14 +52,14 @@ const RefinementList = ({
           <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
             {collections?.map((c) => (
               <li key={c.id}>
-                <label className="flex items-center gap-x-2">
+                <label className="flex-start justify-start items-center gap-x-2 label cursor-pointer" >
                   <input
                     type="checkbox"
                     defaultChecked={refinementList.collection_id?.includes(
                       c.id
                     )}
                     onChange={(e) => handleCollectionChange(e, c.id)}
-                    className="accent-amber-200"
+                    className="accent-amber-200 checkbox checkbox-primary"
                   />
                   {c.title}
                 </label>

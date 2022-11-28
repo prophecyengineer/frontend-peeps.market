@@ -111,7 +111,7 @@ textAlign: 'center'
         )}
       </div>
 
-      <Button onClick={addToCart}>
+      <Button onClick={addToCart} className="btn btn-primary">
         {!inStock ? "Out of stock" : "Add to cart"}
       </Button>
     </div>

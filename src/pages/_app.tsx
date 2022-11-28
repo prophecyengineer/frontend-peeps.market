@@ -7,6 +7,10 @@ import { CartProvider, MedusaProvider } from "medusa-react"
 import { Hydrate } from "react-query"
 import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
+// import { Bowlby_One } from '@next/font/google'
+
+
+// const Bowlby = Bowlby_One({ weight: ['400'], subsets: ["latin"] })
 
 function App({
   Component,
@@ -15,26 +19,29 @@ function App({
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <MedusaProvider
-      baseUrl={MEDUSA_BACKEND_URL}
-      queryClientProviderProps={{
-        client: queryClient,
-      }}
-    >
-      <Hydrate state={pageProps.dehydratedState}>
-        <CartDropdownProvider>
-          <MobileMenuProvider>
-            <CartProvider>
-              <StoreProvider>
-                <AccountProvider>
-                  {getLayout(<Component {...pageProps} />)}
-                </AccountProvider>
-              </StoreProvider>
-            </CartProvider>
-          </MobileMenuProvider>
-        </CartDropdownProvider>
-      </Hydrate>
-    </MedusaProvider>
+    // <div >
+      <MedusaProvider
+        baseUrl={MEDUSA_BACKEND_URL}
+        queryClientProviderProps={{
+          client: queryClient,
+        }}
+        // className={Bowlby.className}
+      >
+        <Hydrate state={pageProps.dehydratedState}>
+          <CartDropdownProvider>
+            <MobileMenuProvider>
+              <CartProvider>
+                <StoreProvider>
+                  <AccountProvider>
+                    {getLayout(<Component {...pageProps} />)}
+                  </AccountProvider>
+                </StoreProvider>
+              </CartProvider>
+            </MobileMenuProvider>
+          </CartDropdownProvider>
+        </Hydrate>
+        </MedusaProvider>
+      // </div>
   )
 }
 

@@ -4,6 +4,45 @@ import { Product, StoreGetProductsParams } from "@medusajs/medusa"
 
 const COL_LIMIT = 15
 
+// const pathLookUpTable = [
+//   {
+//       "id": "ptag_01GJBHT10MYRKQV7ABAAFH9ZNT",
+//       "created_at": "2022-11-20T22:16:12.000Z",
+//       "updated_at": "2022-11-20T22:16:12.000Z",
+//       "value": "featured_emma"
+//   },
+//   {
+//       "id": "ptag_01GJBH4R5DFD3N8XC9WT0QGR8D",
+//       "created_at": "2022-11-20T22:04:34.000Z",
+//       "updated_at": "2022-11-20T22:04:34.000Z",
+//       "value": "original_emma"
+//   },
+//   {
+//       "id": "ptag_01GJBEHKJKKPP0V18BDZEGYTCW",
+//       "created_at": "2022-11-20T21:19:10.000Z",
+//       "updated_at": "2022-11-20T21:19:10.000Z",
+//       "value": "faved_beast"
+//   },
+//   {
+//       "id": "ptag_01GJBEGKSFHVGCHRZ0AAME66SC",
+//       "created_at": "2022-11-20T21:18:37.000Z",
+//       "updated_at": "2022-11-20T21:18:37.000Z",
+//       "value": "featured_beast"
+//   },
+//   {
+//     "id": "ptag_01GJXVQKD21ZVYWE5770KFE5G8",
+//     "created_at": "2022-11-28T00:55:58.072Z",
+//     "updated_at": "2022-11-28T00:55:58.072Z",
+//     "value": "original_beast"
+//   },
+//   {
+//       "id": "ptag_01GJ8SPYTH2PCRHR937JQF4CP5",
+//       "created_at": "2022-11-19T20:36:36.000Z",
+//       "updated_at": "2022-11-19T20:36:36.000Z",
+//       "value": "beast"
+//   }
+// ]
+
 const pathLookUpTable = [
   {
       "id": "ptag_01GJBHT10MYRKQV7ABAAFH9ZNT",
@@ -30,10 +69,10 @@ const pathLookUpTable = [
       "value": "featured_beast"
   },
   {
-    "id": "ptag_01GJXVQKD21ZVYWE5770KFE5G8",
-    "created_at": "2022-11-28T00:55:58.072Z",
-    "updated_at": "2022-11-28T00:55:58.072Z",
-    "value": "original_beast"
+      "id": "ptag_01GJBEF6WC8MDE7WMFQBBERKAY",
+      "created_at": "2022-11-20T21:17:51.000Z",
+      "updated_at": "2022-11-20T21:17:51.000Z",
+      "value": "original_beast"
   },
   {
       "id": "ptag_01GJ8SPYTH2PCRHR937JQF4CP5",
@@ -42,6 +81,7 @@ const pathLookUpTable = [
       "value": "beast"
   }
 ]
+
 const getFeaturedProducts = async (): Promise<Product[]> => {
   const payload = {} as Record<string, unknown>
 

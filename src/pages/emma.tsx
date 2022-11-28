@@ -14,10 +14,11 @@ const Store: NextPageWithLayout = () => {
   const router = useRouter()
   const slug = (router.query.slug as string[]) || []
   return (
-    <>
+    <div data-theme="pastel" className='bg-base-200' style={{minHeight: 'calc(100vh - 64px)'}}>
+
       <Head title={slug.join('/')} description="Explore all of our products." />
     
-      <h1 className='capitalize m-auto'>Emma Merch</h1>
+      <h1 className='capitalize m-auto creator-title'>Emma Merch</h1>
       <div className="flex flex-col small:flex-row small:items-start py-6">
         <RefinementList refinementList={params} setRefinementList={setParams} />
         <InfiniteProducts params={params}  type="origin" />
@@ -30,7 +31,7 @@ const Store: NextPageWithLayout = () => {
       
       {/* </div> */}
       {/* <h1>Featured Peeps</h1> */}
-    </>
+    </div>
   )
 }
 
