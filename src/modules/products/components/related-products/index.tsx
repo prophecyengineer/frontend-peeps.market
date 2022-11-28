@@ -17,8 +17,13 @@ type RelatedProductsProps = {
 const RelatedProducts = ({ product }: RelatedProductsProps) => {
   const { cart } = useCart()
 
-  const queryParams: StoreGetProductsParams = useMemo(() => {
-    const params: StoreGetProductsParams = {}
+
+
+  type NewStoreGetProductsParams = StoreGetProductsParams & { type?: string }
+
+
+  const queryParams: NewStoreGetProductsParams = useMemo(() => {
+    const params: NewStoreGetProductsParams = {}
 
     if (cart?.id) {
       params.cart_id = cart.id
