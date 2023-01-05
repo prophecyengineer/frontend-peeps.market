@@ -20,6 +20,7 @@ const fetchCollection = async (id: string) => {
   return await medusaClient.collections.retrieve(id).then(({ collection }) => ({
     id: collection.id,
     title: collection.title,
+    videoUrl: collection?.metadata?.videoUrl
   }))
 }
 
@@ -55,7 +56,7 @@ const CollectionPage: NextPageWithLayout<PrefetchedPageProps> = ({
     ["get_collection", id],
     () => fetchCollection(id)
   )
-
+    console.log("data",{data})
   if (notFound) {
     if (IS_BROWSER) {
       replace("/404")

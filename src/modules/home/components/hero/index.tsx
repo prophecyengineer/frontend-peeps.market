@@ -6,11 +6,11 @@ const Hero = () => {
     <div className="h-[80vh] w-full relative bg-black	">
       <div className="text-white  ">
         <h1 className=" absolute top-24 right-24 mb-4 text-center max-w-[42rem] ">
-        Snoop's bringin' the funk, come and sell your stuff
+        Snoop&apos;s bringin&apos; the funk, come and sell your stuff
         </h1>
         <p className="text-base-regular  top-64 right-24   max-w-[24rem] absolute   drop-shadow-md shadow-black">
-        Sellin' my stuff, and I'm bringin' my fans along
-Join me on my marketplace, let's make this thing strong
+        Sellin&apos; my stuff, and I&apos;m bringin&apos; my fans along
+Join me on my marketplace, let&apos;s make this thing strong
           <br />
           <br/>
 {/* Bring your art, bring your merch, let's make this marketplace burst
@@ -22,7 +22,7 @@ Sell your crafts, let your creativity flow
 <br/>
           <br/>
 Together we can build an ecosystem of trade
-And make some passive income, ain't that great?
+And make some passive income, ain&apos;t that great?
 
         </p>
         

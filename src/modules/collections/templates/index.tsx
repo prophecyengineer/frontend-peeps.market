@@ -13,15 +13,16 @@ type CollectionTemplateProps = {
   collection: {
     id: string
     title: string
-  }
+    videoUrl: string
+  },
+
 }
 
 const CollectionTemplate: React.FC<CollectionTemplateProps> = ({
-  collection,
+  collection
 }) => {
   const { cart } = useCart()
   const { ref, inView } = useInView()
-
   const {
     data: infiniteData,
     hasNextPage,
@@ -54,7 +55,9 @@ const CollectionTemplate: React.FC<CollectionTemplateProps> = ({
   }, [inView, hasNextPage])
 
   return (
-    <div className="content-container py-6">
+    <>
+    
+    <iframe style={{width: "100%", minHeight:"400px"}} src={collection.videoUrl} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    <div className="content-container py-6">
       <div className="mb-8 text-2xl-semi">
         <h1>{collection.title}</h1>
       </div>
@@ -84,7 +87,8 @@ const CollectionTemplate: React.FC<CollectionTemplateProps> = ({
       >
         <span ref={ref}></span>
       </div>
-    </div>
+      </div>
+      </>
   )
 }
 

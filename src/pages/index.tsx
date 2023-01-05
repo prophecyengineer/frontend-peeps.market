@@ -11,8 +11,10 @@ import Layout from "@modules/layout/templates"
 import { ReactElement } from "react"
 import { NextPageWithLayout } from "types/global"
 import CollectionTemplate from "@modules/collections/templates"
+import { useCollections } from "medusa-react"
 
 const Home: NextPageWithLayout = () => {
+  const { collections } = useCollections()
   return (
     <>
       <Head
@@ -20,12 +22,18 @@ const Home: NextPageWithLayout = () => {
         description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
       />
       <Hero />
-  
-      <CollectionTemplate collection={{
-        id: "pcol_01GNZSX4E78BQBD72T435W2JYQ",
-        title: "Official Doggy Style"
-
-      }} />
+      {collections && collections.map(collection => {
+        return (
+          <CollectionTemplate
+            key={collection.id}
+            collection={{
+            id: collection.id,
+            title: collection.title
+    
+          }} />
+        )
+      })}
+{/*    
          <CollectionTemplate collection={{
         id: "pcol_01GNZSTKFFDHWNR10ARZQG5RWB",
         title: "King Ice"
@@ -40,7 +48,7 @@ const Home: NextPageWithLayout = () => {
         id: "pcol_01GNZSY1XMXXJQ77V8P4KEBGVS",
         title: "Featured Peeps"
 
-      }} />
+      }} /> */}
 
 
           {/* <FeaturedPeeps /> */}
