@@ -7,6 +7,7 @@ import X from "@modules/common/icons/x"
 import { useCollections, useMeCustomer } from "medusa-react"
 import Link from "next/link"
 import ReactCountryFlag from "react-country-flag"
+import Image from "next/image"
 
 const MainMenu = () => {
   const { collections } = useCollections()
@@ -36,7 +37,16 @@ const MainMenu = () => {
           </button>
         </div>
         <div>
-          <h1 className="text-xl-semi uppercase">Acme</h1>
+        <Link href="/">
+            <Image
+            src="/snoopermarket.png"
+            alt=""
+            
+                width="400px"
+                height="50px"
+            className="absolute "
+          />
+            </Link>
         </div>
         <div className="flex-1 basis-0 flex justify-end">
           <button onClick={close}>

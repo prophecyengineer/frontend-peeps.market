@@ -9,6 +9,52 @@
   
 }
 
+@media only screen and (max-width: 600px) {
+
+
+  h1 {
+    font-family: 'gothic';
+    font-size: 40px !important;
+    line-height: 0.8;
+  }
+  
+  h2 {
+    font-family: 'gothic';
+    font-size: 30px !important;
+  }
+  
+  h3 {
+    font-family: 'gothic';
+    font-size: 35px !important;
+  }
+  
+  p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px !important;
+  }
+
+  span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px !important;
+
+  }
+  
+
+  .text-base-regular {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px !important;
+    right: 15px;
+    max-width: 230px;
+  }
+
+  .spreadPicture {
+    height: 100px !important;
+    object-fit: scale-down !important;
+    object-position: bottom !important;    
+  }
+
+}
+
 a {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 20px;

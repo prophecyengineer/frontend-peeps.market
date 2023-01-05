@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[80vh] w-full relative bg-black	">
+    <div className="h-[70vh] w-full relative bg-black	">
       <div className="text-white  ">
         <h1 className=" absolute top-24 right-24 mb-4 text-center max-w-[42rem] ">
         Snoop&apos;s bringin&apos; the funk, come and sell your stuff
@@ -19,11 +19,8 @@ with creativity and style, let's go the extra mile
           <br/> */}
 You and me can sell our stuff together and make some dough
 Sell your crafts, let your creativity flow
-<br/>
-          <br/>
-Together we can build an ecosystem of trade
-And make some passive income, ain&apos;t that great?
 
+   
         </p>
         
      
@@ -42,7 +39,7 @@ And make some passive income, ain&apos;t that great?
         objectFit="cover"
      
         alt="Photo by @thevoncomplex https://unsplash.com/@thevoncomplex"
-        className="absolute inset-0 "
+        className="absolute inset-0 spreadPicture"
         draggable="false"
       />
     </div>
