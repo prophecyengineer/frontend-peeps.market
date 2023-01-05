@@ -15,21 +15,15 @@ const Store: NextPageWithLayout = () => {
   const slug = (router.query.slug as string[]) || []
   return (
     <>
+      <div className='snoop'>
       <Head title={slug.join('/')} description="Explore all of our products." />
     
-      <h1 className='capitalize m-auto creator-title'>{ slug.join('/')} Merch</h1>
+      {/* <h1 className='capitalize m-auto creator-title'>Snoop's Fan Store</h1> */}
       <div className="flex flex-col small:flex-row small:items-start py-6">
         <RefinementList refinementList={params} setRefinementList={setParams} />
         <InfiniteProducts params={params}  type="origin" />
       </div>
-      <h1>Peep Merch</h1>
-      <div className="flex flex-col small:flex-row small:items-start py-6">
- 
-        <RefinementList refinementList={params} setRefinementList={setParams} />
-        <InfiniteProducts params={params} type="featured" />
-      
       </div>
-      {/* <h1>Featured Peeps</h1> */}
     </>
   )
 }

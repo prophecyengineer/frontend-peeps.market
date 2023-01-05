@@ -37,9 +37,8 @@ export const fetchCollectionProducts = async ({
     offset: pageParam,
     collection_id: [id],
     cart_id: cartId,
-    tags: ["beast"]
+  
   })
-  console.log("products", {beast: products})
   return {
     response: { products, count },
     nextPage: count > offset + 12 ? offset + 12 : null,

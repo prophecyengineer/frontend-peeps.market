@@ -1,86 +1,7 @@
 import { medusaClient } from "@lib/config"
 import { Product, StoreGetProductsParams } from "@medusajs/medusa"
-// import { useRouter } from "next/router"
 
 const COL_LIMIT = 15
-
-const pathLookUpTable = [
-  {
-      "id": "ptag_01GJBHT10MYRKQV7ABAAFH9ZNT",
-      "created_at": "2022-11-20T22:16:12.000Z",
-      "updated_at": "2022-11-20T22:16:12.000Z",
-      "value": "featured_emma"
-  },
-  {
-      "id": "ptag_01GJBH4R5DFD3N8XC9WT0QGR8D",
-      "created_at": "2022-11-20T22:04:34.000Z",
-      "updated_at": "2022-11-20T22:04:34.000Z",
-      "value": "original_emma"
-  },
-  {
-      "id": "ptag_01GJBEHKJKKPP0V18BDZEGYTCW",
-      "created_at": "2022-11-20T21:19:10.000Z",
-      "updated_at": "2022-11-20T21:19:10.000Z",
-      "value": "faved_beast"
-  },
-  {
-      "id": "ptag_01GJBEGKSFHVGCHRZ0AAME66SC",
-      "created_at": "2022-11-20T21:18:37.000Z",
-      "updated_at": "2022-11-20T21:18:37.000Z",
-      "value": "featured_beast"
-  },
-  {
-    "id": "ptag_01GJXVQKD21ZVYWE5770KFE5G8",
-    "created_at": "2022-11-28T00:55:58.072Z",
-    "updated_at": "2022-11-28T00:55:58.072Z",
-    "value": "original_beast"
-  },
-  {
-      "id": "ptag_01GJ8SPYTH2PCRHR937JQF4CP5",
-      "created_at": "2022-11-19T20:36:36.000Z",
-      "updated_at": "2022-11-19T20:36:36.000Z",
-      "value": "beast"
-  }
-]
-
-// const pathLookUpTable = [
-//   {
-//       "id": "ptag_01GJBHT10MYRKQV7ABAAFH9ZNT",
-//       "created_at": "2022-11-20T22:16:12.000Z",
-//       "updated_at": "2022-11-20T22:16:12.000Z",
-//       "value": "featured_emma"
-//   },
-//   {
-//       "id": "ptag_01GJBH4R5DFD3N8XC9WT0QGR8D",
-//       "created_at": "2022-11-20T22:04:34.000Z",
-//       "updated_at": "2022-11-20T22:04:34.000Z",
-//       "value": "original_emma"
-//   },
-//   {
-//       "id": "ptag_01GJBEHKJKKPP0V18BDZEGYTCW",
-//       "created_at": "2022-11-20T21:19:10.000Z",
-//       "updated_at": "2022-11-20T21:19:10.000Z",
-//       "value": "faved_beast"
-//   },
-//   {
-//       "id": "ptag_01GJBEGKSFHVGCHRZ0AAME66SC",
-//       "created_at": "2022-11-20T21:18:37.000Z",
-//       "updated_at": "2022-11-20T21:18:37.000Z",
-//       "value": "featured_beast"
-//   },
-//   {
-//       "id": "ptag_01GJBEF6WC8MDE7WMFQBBERKAY",
-//       "created_at": "2022-11-20T21:17:51.000Z",
-//       "updated_at": "2022-11-20T21:17:51.000Z",
-//       "value": "original_beast"
-//   },
-//   {
-//       "id": "ptag_01GJ8SPYTH2PCRHR937JQF4CP5",
-//       "created_at": "2022-11-19T20:36:36.000Z",
-//       "updated_at": "2022-11-19T20:36:36.000Z",
-//       "value": "beast"
-//   }
-// ]
 
 const getFeaturedProducts = async (): Promise<Product[]> => {
   const payload = {} as Record<string, unknown>
@@ -192,41 +113,24 @@ export const getCollectionData = async (id: string) => {
 type FetchProductListParams = {
   pageParam?: number
   queryParams: StoreGetProductsParams
-  type?: string 
-  user?: string 
 }
 
 export const fetchProductsList = async ({
   pageParam = 0,
   queryParams,
-  type = 'featured',
-  user = '',
-  ...rest
-
 }: FetchProductListParams) => {
 
   // const  productTags =  await medusaClient.admin.products.listTags()
 
-  const tags = (userHandle: string) => {
-    return pathLookUpTable
-      .filter(user => user.value.includes(type))
-      .filter(user => user.value.includes(userHandle.replace("/", "")))
-      .map(e => e.id)
-  }
-
-  const tagsList = tags(user)
 
   const { products, count, offset } = await medusaClient.products.list({
     limit: 12,
   
     offset: pageParam,
     ...queryParams,
-    tags: tagsList,
+    // tags: ["ptag_01GJ8SPYTH2PCRHR937JQF4CP5"],
   })
-  // ["ptag_01GJ8SPYTH2PCRHR937JQF4CP5"]
-
-
-  console.log("products fetchProductsList", {products, rest, 'tags(rest?.user)':tags(user), type})
+  console.log("products fetchProductsList", {products })
 
   return {
     response: { products, count },

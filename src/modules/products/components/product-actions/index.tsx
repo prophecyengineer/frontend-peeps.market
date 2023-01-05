@@ -14,18 +14,6 @@ type ProductActionsProps = {
 const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   const { updateOptions, addToCart, options, inStock, variant } =
     useProductActions()
-  
-  // console.log('productproduct', product)
-  
-
-
-  const backLink = (product: Product) => {
-
-    return product?.tags.filter(tag => tag.value.includes('original_')).filter(e => e.value)[0]?.value?.replace('original_', "")
-  }
-
-  console.log('product',product)
-  console.log('backLink', backLink(product))
 
   const price = useProductPrice({ id: product.id, variantId: variant?.id })
 
@@ -37,30 +25,13 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
 
   return (
     <div className="flex flex-col gap-y-2">
-      <a href={`/${backLink(product)}`}>
-      <div style={{
-
-width: "100px",
-height: "100px",
-borderRadius: "50%",
-background: "lightblue",
-marginLeft: "auto",
-lineHeight: "100px",
-textAlign: 'center'
-      }}>
-
-        
-      {backLink(product)}
-
-        </div>
-        </a>
-      {product.collection && (
+      {/* {product.collection && (
         <Link href={`/collections/${product.collection.id}`}>
           <a className="text-small-regular text-gray-700">
             {product.collection.title}
           </a>
         </Link>
-      )}
+      )} */}
       <h3 className="text-xl-regular">{product.title}</h3>
 
       <p className="text-base-regular">{product.description}</p>
@@ -111,7 +82,7 @@ textAlign: 'center'
         )}
       </div>
 
-      <Button onClick={addToCart} className="btn btn-primary">
+      <Button onClick={addToCart}>
         {!inStock ? "Out of stock" : "Add to cart"}
       </Button>
     </div>

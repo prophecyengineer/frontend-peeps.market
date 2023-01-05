@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: gothic;
+  src: url(./Canterbury.ttf);
+  
+}
+
+a {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 0.8;
+}
+
+button {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 0.8;
+}
+
+
+h1 {
+  font-family: 'gothic';
+  font-size: 70px;
+  line-height: 0.8;
+}
+
+h2 {
+  font-family: 'gothic';
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'gothic';
+  font-size: 35px !important;
+}
+
+
+
+span {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px !important;
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px !important;
+}
+
+.btn {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  font-size: 27px;
+  text-transform: uppercase;
+
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -76,6 +132,8 @@
 
   .text-base-semi {
     @apply text-sm leading-6 font-semibold;
+    font-family: 'gothic';
+    font-size: 35px !important;
   }
 
   .text-large-regular {
@@ -98,8 +156,16 @@
     @apply text-[30px] leading-[48px] font-normal;
   }
 
+
+  
+
   .text-2xl-semi {
     @apply text-[30px] leading-[48px] font-semibold;
+    font-size: 30px;
+    padding-bottom: 16px;
+    font-weight: 600;
+    line-height: 56px;
+    border-bottom: 3px solid;
   }
 
   .text-3xl-regular {
@@ -121,4 +187,10 @@
 .peeps-logo{
   font-family: 'Bowlby One', cursive;
 
+}
+
+
+.snoop {
+  background-color: #212121;
+  color: #fff;
 }

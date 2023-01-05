@@ -27,7 +27,7 @@ const DropdownMenu = () => {
       className="h-full"
     >
       <div className="flex items-center h-full">
-        <Popover className="h-full flex">
+        <Popover className="h-full flex" >
           <>
             <Link href="/shop" passHref>
               <a className="relative flex h-full">
@@ -56,7 +56,7 @@ const DropdownMenu = () => {
                 static
                 className="absolute top-full inset-x-0 text-sm text-gray-700 z-30 border-y border-gray-200"
               >
-                <div className="relative bg-white py-8">
+                <div  className="relative bg-white py-8">
                   <div className="flex items-start content-container">
                     <div className="flex flex-col flex-1 max-w-[30%]">
                       <h3 className="text-base-semi text-gray-900 mb-4">

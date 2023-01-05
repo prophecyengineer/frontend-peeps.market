@@ -3,27 +3,48 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[90vh] w-full relative bg-black	">
-      <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
-        <h1 className="text-2xl-semi mb-4 drop-shadow-md shadow-black">
-          Enable your fans to earn an income from your reach
+    <div className="h-[80vh] w-full relative bg-black	">
+      <div className="text-white  ">
+        <h1 className=" absolute top-24 right-24 mb-4 text-center max-w-[42rem] ">
+        Snoop's bringin' the funk, come and sell your stuff
         </h1>
-        <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
-          Made by your fans for your fans
+        <p className="text-base-regular  top-64 right-24   max-w-[24rem] absolute   drop-shadow-md shadow-black">
+        Sellin' my stuff, and I'm bringin' my fans along
+Join me on my marketplace, let's make this thing strong
+          <br />
+          <br/>
+{/* Bring your art, bring your merch, let's make this marketplace burst
+with creativity and style, let's go the extra mile
+          <br />
+          <br/> */}
+You and me can sell our stuff together and make some dough
+Sell your crafts, let your creativity flow
+<br/>
+          <br/>
+Together we can build an ecosystem of trade
+And make some passive income, ain't that great?
+
         </p>
-        {/* <UnderlineLink href="/store">Explore products</UnderlineLink> */}
+        
+     
+
+
+
+
+
       </div>
-      {/* <Image
-        src="/hero.jpg"
+      <Image
+        src="/snoop.png"
         layout="fill"
         loading="eager"
         priority={true}
-        quality={90}
+        quality={100}
         objectFit="cover"
+     
         alt="Photo by @thevoncomplex https://unsplash.com/@thevoncomplex"
-        className="absolute inset-0"
+        className="absolute inset-0 "
         draggable="false"
-      /> */}
+      />
     </div>
   )
 }

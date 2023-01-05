@@ -8,6 +8,7 @@ import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const Nav = () => {
   const { pathname } = useRouter()
@@ -47,9 +48,11 @@ const Nav = () => {
     >
       <header
         style={{
-          background: "none",
+          background: "#ffffffa6",
+          backdropFilter: 'blur(8px)',
           position: "absolute",
           width: "100%"
+
         }}
         className={clsx(
           "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent"
@@ -66,30 +69,40 @@ const Nav = () => {
             }
           )}
         >
-          {/* <div className="flex-1 basis-0 h-full flex items-center">
+          <div className="flex-1 basis-0 h-full flex items-center">
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
             </div>
             <div className="hidden small:block h-full">
-              <DropdownMenu />
+              <DropdownMenu  />
             </div>
-          </div> */}
+          
 
-          <div style={{
-                filter: "contrast(0)"
-          }} className="flex items-center h-full">
+         
+          </div>
+         
+    
+
+          <div  className="flex items-center h-full">
             <Link href="/">
-              <a className="text-xl-semi uppercase peeps-logo">peeps.market</a>
+            <Image
+            src="/snoopermarket.png"
+            alt=""
+            
+                width="400px"
+                height="50px"
+            className="absolute "
+          />
             </Link>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            {/* <div className="hidden small:flex items-center gap-x-6 h-full">
+            <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
               <Link href="/account">
                 <a>Account</a>
               </Link>
-            </div> */}
+            </div>
             <CartDropdown />
           </div>
         </nav>

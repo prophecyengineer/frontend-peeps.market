@@ -12,13 +12,6 @@ import { ReactElement } from "react"
 import { dehydrate, QueryClient, useQuery } from "react-query"
 import { NextPageWithLayout, PrefetchedPageProps } from "types/global"
 
-
-const styleMap = {
-  'beast': 'cyberpunk',
-  "emma": 'pastel',
-  "snoop": 'forest'
-}
-
 interface Params extends ParsedUrlQuery {
   handle: string
 }
@@ -29,15 +22,9 @@ const fetchProduct = async (handle: string) => {
     .then(({ products }) => products[0])
 }
 
-// const backLink = (product: Product) => {
-//   return product?.tags.filter(tag => tag.value.includes('original_')).filter(e => e.value)[0]?.value?.replace('original_', "")
-// }
-
 const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
   const { query, isFallback, replace } = useRouter()
   const handle = typeof query.handle === "string" ? query.handle : ""
-
-  console.log("queryquery", {ref: query.ref})
 
   const { data, isError, isLoading, isSuccess } = useQuery(
     [`get_product`, handle],
@@ -47,9 +34,6 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
       keepPreviousData: true,
     }
   )
-
-
-  // console.log("datadata", {backLink:backLink(data) })
 
   if (notFound) {
     if (IS_BROWSER) {
@@ -69,15 +53,14 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
 
   if (isSuccess) {
     return (
-      // @ts-ignore
-      <div data-theme={query?.ref ? styleMap[query.ref]: 'light'}>
+      <>
         <Head
           description={data.description}
           title={data.title}
           image={data.thumbnail}
         />
         <ProductTemplate product={data} />
-      </div>
+      </>
     )
   }
 
