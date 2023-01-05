@@ -28,7 +28,8 @@ const Home: NextPageWithLayout = () => {
             key={collection.id}
             collection={{
             id: collection.id,
-            title: collection.title
+              title: collection.title,
+             videoUrl: String(collection?.metadata?.videoUrl)
     
           }} />
         )
