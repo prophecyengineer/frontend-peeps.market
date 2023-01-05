@@ -40,16 +40,16 @@ const Home: NextPageWithLayout = () => {
     
 
 
-      <CollectionPreview collection={{
+      {/* <CollectionPreview collection={{
         id:  "pcol_01GNZSX4E78BQBD72T435W2JYQ",
         title: "DoggyStyle"
 
-      }} />
-{/* <CollectionPreview collection={{
+      }} /> */}
+<CollectionPreview collection={{
         id: "pcol_01GP1QX742ZVADHYKBK548H83F",
         title: "DoggyStyle"
 
-      }} /> */}
+      }} />
    
          <CollectionPreview collection={{
         id: "pcol_01GP1QVFD8VP4HEAFFHYQAV07T",
