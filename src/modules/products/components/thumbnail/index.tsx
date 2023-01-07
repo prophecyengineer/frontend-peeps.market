@@ -42,11 +42,11 @@ const ImageOrPlaceholder = ({
       layout="fill"
       objectFit="cover"
       objectPosition="center"
-      className="absolute inset-0"
+      className="absolute inset-0 productPreview"
       draggable={false}
     />
   ) : (
-    <div className="w-full h-full absolute inset-0 bg-gray-100 flex items-center justify-center">
+    <div className="w-full h-full absolute productPreview inset-0 bg-gray-100 flex items-center justify-center">
       <PlaceholderImage size={size === "small" ? 16 : 24} />
     </div>
   )

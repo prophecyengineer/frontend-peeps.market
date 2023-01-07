@@ -18,8 +18,12 @@ function App({
 }: AppPropsWithLayout<{ dehydratedState?: unknown }>) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
+
+
+
+
   return (
-    // <div >
+    <div >
       <MedusaProvider
         baseUrl={MEDUSA_BACKEND_URL}
         queryClientProviderProps={{
@@ -41,7 +45,7 @@ function App({
           </CartDropdownProvider>
         </Hydrate>
         </MedusaProvider>
-      // </div>
+     </div>
   )
 }
 

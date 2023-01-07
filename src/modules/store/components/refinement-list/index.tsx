@@ -51,7 +51,7 @@ const RefinementList = ({
           <span className="text-base-semi">Collections</span>
          
         </div>
-        <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
+        <ul className="text-base-regular mt-8 flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
             {collections?.map((c) => (
               <li key={c.id}>
                 <label className="flex-start justify-start items-center gap-x-2 label cursor-pointer" >
@@ -61,7 +61,7 @@ const RefinementList = ({
                       c.id
                     )}
                     onChange={(e) => handleCollectionChange(e, c.id)}
-                    className="accent-amber-200 checkbox checkbox-primary"
+                    className="accent-amber-200 checkbox border-black border-2 rounded-none"
                   />
                   {c.title}
                 </label>

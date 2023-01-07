@@ -13,14 +13,15 @@ import { NextPageWithLayout } from "types/global"
 import CollectionTemplate from "@modules/collections/templates"
 import { useCollections } from "medusa-react"
 import CollectionPreview from "@modules/collections/preview"
+import Footer from "@modules/layout/templates/footer"
 
 const Home: NextPageWithLayout = () => {
   const { collections } = useCollections()
   return (
     <>
       <Head
-        title="Home"
-        description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
+        title="SnooperMarketplace"
+        description="Shop all available"
       />
       <Hero />
       {/* {collections && collections.map(collection => {
@@ -68,7 +69,8 @@ const Home: NextPageWithLayout = () => {
       }} />
 
 
-          {/* <FeaturedPeeps /> */}
+      {/* <FeaturedPeeps /> */}
+      
      
     </>
   )

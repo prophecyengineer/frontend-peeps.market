@@ -5,9 +5,9 @@ import MedusaCTA from "@modules/layout/components/medusa-cta"
 const Footer = () => {
   return (
     <footer>
-      <FooterCTA />
-      {/* <FooterNav /> */}
-      {/* <MedusaCTA /> */}
+      {/* <FooterCTA /> */}
+      <FooterNav />
+      <MedusaCTA />
     </footer>
   )
 }

@@ -4,6 +4,11 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/modules/**/*.{js,ts,jsx,tsx}",
   ],
+  daisyui: {
+    themes: [
+      "light", "dark", "cupcake", "bumblebee", "emerald", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "black", "luxury", "cmyk", "acid", "night", "coffee"
+    ],
+  },
   theme: {
     extend: {
       transitionProperty: {

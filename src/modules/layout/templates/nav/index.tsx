@@ -10,29 +10,21 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
+import { themeChange } from 'theme-change'
+
+
 const Nav = () => {
   const { pathname } = useRouter()
   const [isHome, setIsHome] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  //useEffect that detects if window is scrolled > 5px on the Y axis
   useEffect(() => {
-    if (isHome) {
-      const detectScrollY = () => {
-        if (window.scrollY > 5) {
-          setIsScrolled(true)
-        } else {
-          setIsScrolled(false)
-        }
-      }
+    themeChange(false)
+    // 👆 false parameter is required for react project
+  }, [])
 
-      window.addEventListener("scroll", detectScrollY)
-
-      return () => {
-        window.removeEventListener("scroll", detectScrollY)
-      }
-    }
-  }, [isHome])
+  //useEffect that detects if window is scrolled > 5px on the Y axis
+ 
 
   useEffect(() => {
     pathname === "/" ? setIsHome(true) : setIsHome(false)
@@ -64,12 +56,21 @@ const Nav = () => {
         <nav
           className={clsx(
             "text-gray-900 flex items-center justify-between w-full h-full text-small-regular transition-colors duration-200",
-            {
-              "text-white group-hover:text-gray-900": isHome && !isScrolled,
-            }
+          
           )}
         >
           <div className="flex-1 basis-0 h-full flex items-center">
+          <div className="mr-8">
+	
+	<select data-choose-theme className="chooseTheme focus:outline-none h-10 rounded-full px-3 border">
+		<option value="">Default</option>
+		<option value="dark">Dark</option>
+		<option value="black">Black</option>
+		<option value="valentine">Pink</option>
+		<option value="aqua">Blue</option>
+		<option value="🐤">Yellow</option>
+	</select>
+</div>
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
             </div>
@@ -78,9 +79,14 @@ const Nav = () => {
             </div>
           
 
+
          
           </div>
-         
+        
+	
+
+
+
     
 
           <div  className="flex items-center h-full">

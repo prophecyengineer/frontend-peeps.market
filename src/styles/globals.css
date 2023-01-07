@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-default: #fff;
+}
+@media (prefers-color-scheme: lofi){
+	:root{
+		--color-default: #252b30;
+	}
+}
+
 
 @font-face {
   font-family: gothic;
@@ -39,6 +48,18 @@
 
   }
   
+  select {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    font-size: 16px !important;
+  }
+
+  option {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    font-size: 16px !important;
+  }
+
+
+
 
   .text-base-regular {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -84,6 +105,10 @@ h3 {
   font-size: 35px !important;
 }
 
+
+/* .productPreview {
+  border: black 3px solid !important;
+} */
 
 
 span {
@@ -231,7 +256,8 @@ p {
 }
 
 .peeps-logo{
-  font-family: 'Bowlby One', cursive;
+ 
+  font-size: medium;
 
 }
 
@@ -239,4 +265,46 @@ p {
 .snoop {
   background-color: #212121;
   color: #fff;
+}
+
+.poweredBy {
+
+  width: 370px;
+    display: flex;
+
+    grid-template-columns: 2;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+  border-top: black 3px solid;
+}
+
+
+[data-theme='dark'] {
+  --color-default: #252b30;
+}
+[data-theme='black'] {
+  --color-default: #000000;
+
+}
+[data-theme='valentine'] {
+  --color-default: #ffabc8;
+}
+[data-theme='aqua'] {
+  --color-default: #5aa1dc;
+}
+[data-theme='🐤'] {
+  --color-default: #ffd65a;
+}
+body {
+	background-color: var(--color-default);
+}
+
+.chooseTheme {
+  border: black 2px solid;
+  background-color: #fff;
 }
