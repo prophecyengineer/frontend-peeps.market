@@ -3,8 +3,8 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[70vh] w-full relative bg-black	">
-      <div className="text-white  ">
+    <div className="h-[70vh] w-full relative border-b-4 border-b	mb-8 mt-16 text-2xl-semi ml-5 mr-5">
+      <div className=" ">
         <h1 className=" absolute top-24 right-24 mb-4 text-center max-w-[42rem] ">
         Snoop&apos;s bringin&apos; the funk, come and sell your stuff
         </h1>

@@ -297,6 +297,14 @@ footer {
 [data-theme='aqua'] {
   --color-default: #5aa1dc;
 }
+
+
+[data-theme='luxury'] {
+  
+  --color-default: #09090B
+}
+
+
 [data-theme='🐤'] {
   --color-default: #ffd65a;
 }

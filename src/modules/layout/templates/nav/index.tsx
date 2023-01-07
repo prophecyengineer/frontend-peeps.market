@@ -64,7 +64,8 @@ const Nav = () => {
 	
 	<select data-choose-theme className="chooseTheme focus:outline-none h-10 rounded-full px-3 border">
 		<option value="">Default</option>
-		<option value="dark">Dark</option>
+		<option value="luxury">Luxury</option>
+		{/* <option value="dark">Dark</option> */}
 		<option value="black">Black</option>
 		<option value="valentine">Pink</option>
 		<option value="aqua">Blue</option>
