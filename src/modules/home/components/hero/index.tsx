@@ -1,5 +1,6 @@
 import UnderlineLink from "@modules/common/components/underline-link"
 import Image from "next/image"
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -23,22 +24,24 @@ const Hero = () => {
       
         </p>
         <div className="mt-8 flex  btnBox "  role="button">
-          <a
-            className="flex items-center justify-center px-8 py-3   rounded-md btn btn-primary shadow uppercase "
+          <Link
+           
             href="/store"
-            >See the collection</a
-          >
-          <a
-            className="flex items-center justify-center px-8 py-3 ml-4 rounded-md btn btn-outline shadow uppercase submitBtn"
+            ><div  className="flex items-center justify-center px-8 py-3   rounded-md btn btn-primary shadow uppercase ">See the collection</div></Link>
+          <Link
+           
             href="https://peeps.market/fans"
-            >Submit yours</a
+            >
+              
+              <div  className="flex items-center justify-center px-8 py-3 ml-4 rounded-md btn btn-outline shadow uppercase submitBtn">
+              Submit yours</div></Link
           >
         </div>
       </div>
       <div className="mr-40 imgBox" role="img">
      
           
-          <img className="imgSnoop border-2 border-tertiary object-cover object-center w-96 " width='400px' height='400px' src="https://media3.giphy.com/media/9E7UurxqZ6d9yyy8ET/giphy.gif?cid=790b76117eb4865ca1e353deb4b0e68bc19a2a3a749a11a2&rid=giphy.gif&ct=g"/>
+          <Image className="imgSnoop border-2 border-tertiary object-cover object-center w-96 " width='400px' height='400px' src="https://media3.giphy.com/media/9E7UurxqZ6d9yyy8ET/giphy.gif?cid=790b76117eb4865ca1e353deb4b0e68bc19a2a3a749a11a2&rid=giphy.gif&ct=g"/>
 
       </div>
     </div>

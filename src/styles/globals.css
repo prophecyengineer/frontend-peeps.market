@@ -61,12 +61,18 @@
     align-items: center;
     justify-content: center;
     padding-top: 20px;
+    padding: 120px;
+    height: 100px;
+ 
   }
 
   .imgSnoop {
-    width: 180px  !important;
+    max-width: 200px !important;
+    width: 80px  !important;
     margin-top: 4px !important;
   }
+
+
 
   .mainHero{
     display: contents;
