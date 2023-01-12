@@ -24,29 +24,32 @@ const Home: NextPageWithLayout = () => {
         description="Shop all available"
       />
       <Hero />
-      {/* {collections && collections.map(collection => {
-        return (
-          <CollectionTemplate
-            key={collection.id}
-            collection={{
-            id: collection.id,
-              title: collection.title,
-             videoUrl: String(collection?.metadata?.videoUrl)
-    
-          }} />
-        )
-      })} */}
-
-     
-    
-
-
+      <div className="collectionBox">
       {/* <CollectionPreview collection={{
         id:  "pcol_01GNZSX4E78BQBD72T435W2JYQ",
         title: "DoggyStyle"
 
       }} /> */}
-<CollectionPreview collection={{
+      {/* {collections && collections.map(collection => {
+        return (
+          <CollectionPreview
+            key={collection.id}
+            collection={{
+            id: collection.id,
+              title: collection.title,
+            //  videoUrl: String(collection?.metadata?.videoUrl)
+    
+          }} />
+        )
+      })} */}
+        
+        {/* <CollectionPreview collection={{
+        id:  "pcol_01GNZSX4E78BQBD72T435W2JYQ",
+        title: "DoggyStyle"
+
+      }} />
+         */}
+        <CollectionPreview collection={{
         id: "pcol_01GP1QX742ZVADHYKBK548H83F",
         title: "DoggyStyle"
 
@@ -67,6 +70,15 @@ const Home: NextPageWithLayout = () => {
         title: "Featured Peeps"
 
       }} />
+ 
+
+      
+     
+ </div>
+
+
+    
+
 
 
       {/* <FeaturedPeeps /> */}

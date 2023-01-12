@@ -8,6 +8,10 @@ import { useCart } from "medusa-react"
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { useInfiniteQuery } from "react-query"
+import "swiper/css";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 
 type CollectionPreviewProps = {
   collection: {
@@ -55,17 +59,33 @@ const CollectionPreview: React.FC<CollectionPreviewProps> = ({
   }, [inView, hasNextPage])
 
   return (
-    <>
-    
-      <div className="mb-8 mt-16 text-2xl-semi ml-5 mr-5">
+    <div className="collectionCard">
+      
+      <div className="carouselTitle">
         <h1>{collection.title}</h1>
       </div>
-      <ul className="grid grid-cols-2 small:grid-cols-4 medium:grid-cols-4 gap-x-4 gap-y-8">
+      {/* <ul className="grid grid-cols-2 small:grid-cols-4 medium:grid-cols-4 gap-x-4 gap-y-8"> */}
+      <Swiper
+          spaceBetween={30}
+          
+         slidesPerView={4}
+                navigation={true}
+                modules={[Navigation]}
+                className="mySwiper carousel"
+            >
+             
         {previews.map((p) => (
-          <li key={p.id}>
-            <ProductPreview {...p} />
-          </li>
+
+          <SwiperSlide key={p.id}>
+        
+            
+            
+<ProductPreview  {...p} />
+</SwiperSlide>
+          
+        
         ))}
+              </Swiper>
         {isLoading &&
           !previews.length &&
           repeat(8).map((index) => (
@@ -79,7 +99,14 @@ const CollectionPreview: React.FC<CollectionPreviewProps> = ({
               <SkeletonProductPreview />
             </li>
           ))}
-      </ul>
+
+              
+        
+
+     
+    
+    
+      {/* </ul> */}
       <div
         className="py-16 flex justify-center items-center text-small-regular text-gray-700"
         ref={ref}
@@ -87,7 +114,7 @@ const CollectionPreview: React.FC<CollectionPreviewProps> = ({
         <span ref={ref}></span>
       </div>
    
-      </>
+      </div>
   )
 }
 

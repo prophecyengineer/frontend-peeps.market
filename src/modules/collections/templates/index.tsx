@@ -57,7 +57,7 @@ const CollectionTemplate: React.FC<CollectionTemplateProps> = ({
   return (
     <>
     
-    <iframe style={{width: "100%", minHeight:"400px", borderTop: "2px black solid", borderBottom: "2px black solid"}} src={collection.videoUrl} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    <div className="content-container py-6">
+    <iframe  style={{width: "100%", minHeight:"400px"}} src={collection.videoUrl} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    <div className="content-container py-6">
       <div className="mb-8 text-2xl-semi">
         <h1>{collection.title}</h1>
       </div>

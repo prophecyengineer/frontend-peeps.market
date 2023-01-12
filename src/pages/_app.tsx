@@ -24,6 +24,7 @@ function App({
 
   return (
     <div >
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
       <MedusaProvider
         baseUrl={MEDUSA_BACKEND_URL}
         queryClientProviderProps={{

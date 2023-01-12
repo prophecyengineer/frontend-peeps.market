@@ -18,10 +18,16 @@ const Nav = () => {
   const [isHome, setIsHome] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+
+
+
   useEffect(() => {
     themeChange(false)
     // 👆 false parameter is required for react project
   }, [])
+
+
+  
 
   //useEffect that detects if window is scrolled > 5px on the Y axis
  
@@ -39,13 +45,7 @@ const Nav = () => {
       })}
     >
       <header
-        style={{
-          background: "#ffffffa6",
-          backdropFilter: 'blur(8px)',
-          position: "absolute",
-          width: "100%"
-
-        }}
+       
         className={clsx(
           "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent"
           // {
@@ -60,18 +60,7 @@ const Nav = () => {
           )}
         >
           <div className="flex-1 basis-0 h-full flex items-center">
-          <div className="mr-8">
-	
-	<select data-choose-theme className="chooseTheme focus:outline-none h-10 rounded-full px-3 border">
-		<option value="">Default</option>
-		<option value="luxury">Luxury</option>
-		{/* <option value="dark">Dark</option> */}
-		<option value="black">Black</option>
-		<option value="valentine">Pink</option>
-		<option value="aqua">Blue</option>
-		<option value="🐤">Yellow</option>
-	</select>
-</div>
+         
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
             </div>
@@ -81,7 +70,16 @@ const Nav = () => {
           
 
 
-         
+            <select data-choose-theme className="text-primary chooseTheme focus:outline-none h-10 rounded-full px-3 border">
+              <option value="lemonade">⚪️</option>
+              <option value="forest">🟢</option>
+              <option value="bumblebee" >🟡</option>
+		<option value="valentine">💗</option>
+    <option value="luxury">⚜️</option>
+		<option value="garden">🥬</option>
+             
+        <option value="retro">🥯</option>
+	</select>
           </div>
         
 	
@@ -96,9 +94,9 @@ const Nav = () => {
             src="/snoopermarket.png"
             alt=""
             
-                width="400px"
+                width="250px"
                 height="50px"
-            className="absolute "
+            className="absolute logoImg "
           />
             </Link>
           </div>

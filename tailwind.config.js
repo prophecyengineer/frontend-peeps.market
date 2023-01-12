@@ -1,3 +1,6 @@
+
+
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -6,8 +9,7 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      "light", "dark", "cupcake", "bumblebee", "emerald", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "black", "luxury", "cmyk", "acid", "night", "coffee"
-    ],
+      "lemonade", "bumblebee", "retro", "valentine", "garden", "forest", "luxury"]
   },
   theme: {
     extend: {
